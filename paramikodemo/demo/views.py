@@ -26,5 +26,6 @@ class SshConnectionView(APIView):
             cmd="python {pathToFile}".format(pathToFile=pathToFile)
             stdin,stdout,stderr=ssh_client.exec_command(cmd)
             # stdout=stdout.readlines()
+            print("Hello")
             return Response(stdout)
         return Response(serializer.errors)
